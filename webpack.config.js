@@ -2,10 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  // entry: './src/index.js', we have the default file so we can omit this
-  devServer: {
-    static: './build',
+  entry: {
+    index: './src/index.js',
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -16,7 +16,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
-  
+
   module: {
     rules: [
       {
@@ -28,4 +28,4 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single',
   },
-}
+};

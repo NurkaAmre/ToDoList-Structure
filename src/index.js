@@ -1,54 +1,49 @@
-class newTask {
-    constructor(description, completed = false, index) {
-      this.description = description;
-      this.completed = completed;
-      this.index = index;
-    }
-  }
+const listsContainer = document.querySelector('#tasks');
+const newListForm = document.querySelector('[data-new-list-form]');
+const newListInput = document.querySelector('[data-new-list-input]');
 
-const addNew = document.querySelector('#newtask');
-const addBtn = document.querySelector('#push');
-const taskList = document.querySelector('#tasks');
-const clearComplited = document.querySelector('#removed');
+const lists = [];
 
-// Clear flieds
-const formClear = (task) => {
-    task.value = '';
+function createList(name) {
+  return {
+    id: Date.now().toString(), name, tasks: [],
   };
-
-// Adding validation for empty input field
-addNew.onclick = function () {
-    if(document.querySelector('#newtask input').value.length == 0){
-        alert('Please enter a task');
-    }
-    // Adding a new task
-    else {
-        document.querySelector('#tasks').innerHTML += `
-        <ul class="task">
-        <li id="taskname">
-        ${document.querySelector('#newtask input').value}
-        </li>
-        <button clas='delete'><i class="fa-light fa-ellipsis-vertical"></i></button>
-        </ul>
-        `;
-    }
-
-    document.querySelector('#newtask input')
-value = '';
 }
 
+function clearElement(element) {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+}
 
+function render() {
+  clearElement(listsContainer);
+  lists.forEach((list) => {
+    const listElement = document.createElement('li');
+    listElement.dataset.listId = list.id;
+    listElement.classList.add('list-name');
+    listElement.innerText = list.name;
+    listsContainer.appendChild(listElement);
+  });
+}
 
+newListForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const listName = newListInput.value;
+  if (listName == null || listName === '') return;
+  const list = createList(listName);
+  newListInput.value = null;
+  lists.push(list);
+  render();
+});
 
+render();
 
-
-
-
-
-
-
-
-
-
-
-
+//         document.querySelector('#tasks').innerHTML += `
+//         <ul class="task">
+//         <li id="taskname">
+//         ${document.querySelector('#newtask input').value}
+//         </li>
+//         <button class='delete'><i class="fa-light fa-ellipsis-vertical"></i></button>
+//         </ul>
+//         `;
