@@ -1,15 +1,17 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
-# Project Name
+# ToDoList Structure
 
 > Description the project.
+In this project we will be using webpack to create, edit, and delete tasks from a list of tasks created by the user, the main goals of this project are:
 
+- Use webpack to bundle JavaScript.
+- Learn how to use proper ES6 syntax.
+- Use ES6 modules to write modular JavaScript.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JavaScript
 
 ## Live Demo (if available)
 
@@ -27,6 +29,9 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 ### Setup
+Have git installed. (For version control)
+Have text editor installed. (Preferably VSCode)
+Have CSS,HTML & JS Linters installed and configured. For further information, visit this link to get better understanding on each linters used on this project.
 
 ### Install
 
@@ -35,22 +40,17 @@ To get a local copy up and running follow these simple example steps.
 ### Run tests
 
 ### Deployment
-
+- Create a new task
+- Delete task
+-  Add a new task
 
 
 ## Authors
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@NurkaAmre](https://github.com/githubhandle)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
@@ -64,12 +64,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Thanks for Microverse 
+- Thanks for me
 
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
