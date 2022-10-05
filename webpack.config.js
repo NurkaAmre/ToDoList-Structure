@@ -13,8 +13,10 @@ module.exports = {
   ],
   mode: 'development',
   output: {
-    path: path.resolve(__dirname, 'build') // Changes the directory name
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'build'),
   },
+  
   module: {
     rules: [
       {
