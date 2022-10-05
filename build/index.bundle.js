@@ -6,7 +6,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(self["webpackChunkwebpacksetup"] = self["webpackChunkwebpacksetup"] || []).push([["index"],{
+(self["webpackChunktodo_list"] = self["webpackChunktodo_list"] || []).push([["index"],{
 
 /***/ "./src/index.js":
 /*!**********************!*\
@@ -14,7 +14,7 @@
   \**********************/
 /***/ (() => {
 
-eval("class newTask {\r\n    constructor(description, completed = false, index) {\r\n      this.description = description;\r\n      this.completed = completed;\r\n      this.index = index;\r\n    }\r\n  }\r\n\r\nconst addNew = document.querySelector('#newtask');\r\nconst addBtn = document.querySelector('#push');\r\nconst taskList = document.querySelector('#tasks');\r\nconst clearComplited = document.querySelector('#removed');\r\n\r\n// Clear flieds\r\nconst formClear = (task) => {\r\n    task.value = '';\r\n  };\r\n\r\n\r\n        document.querySelector('#tasks').innerHTML += `\r\n        <ul class=\"task\">\r\n        <li id=\"taskname\">\r\n        ${document.querySelector('#newtask input').value}\r\n        </li>\r\n        <button class='delete'><i class=\"fa-light fa-ellipsis-vertical\"></i></button>\r\n        </ul>\r\n        `;\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://webpacksetup/./src/index.js?");
+eval("const listsContainer = document.querySelector('#tasks');\nconst newListForm = document.querySelector('[data-new-list-form]');\nconst newListInput = document.querySelector('[data-new-list-input]');\n\nconst lists = [];\n\nfunction createList(name) {\n  return {\n    id: Date.now().toString(), name, tasks: [],\n  };\n}\n\nfunction clearElement(element) {\n  while (element.firstChild) {\n    element.removeChild(element.firstChild);\n  }\n}\n\nfunction render() {\n  clearElement(listsContainer);\n  lists.forEach((list) => {\n    const listElement = document.createElement('li');\n    listElement.dataset.listId = list.id;\n    listElement.classList.add('list-name');\n    listElement.innerText = list.name;\n    listsContainer.appendChild(listElement);\n  });\n}\n\nnewListForm.addEventListener('submit', (e) => {\n  e.preventDefault();\n  const listName = newListInput.value;\n  if (listName == null || listName === '') return;\n  const list = createList(listName);\n  newListInput.value = null;\n  lists.push(list);\n  render();\n});\n\nrender();\n\n//         document.querySelector('#tasks').innerHTML += `\n//         <ul class=\"task\">\n//         <li id=\"taskname\">\n//         ${document.querySelector('#newtask input').value}\n//         </li>\n//         <button class='delete'><i class=\"fa-light fa-ellipsis-vertical\"></i></button>\n//         </ul>\n//         `;\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
 
 /***/ })
 

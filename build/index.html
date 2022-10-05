@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/6ce384dd4f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>ToDoList</title>
@@ -14,19 +14,19 @@
             <ul class="main-ul">
                 <li>
                     <h1>Today's to do list</h1>
-                    <button><i class="fa-solid fa-arrows-rotate"></i></button>
+                    <button type="button"><i class="fa-solid fa-arrows-rotate"></i></button>
                 </li>
                 <hr>
                 <li id="new-task">
-                    <form>
-                        <input placeholder="Add a list..." type="text">
-                        <button id="push" class="first-btn">&#x21B5;</button>
+                    <form action="" data-new-list-form>
+                        <input placeholder="Add a list..." data-new-list-input type="text">
+                        <button type="submit" id="push" class="first-btn">&#x21B5;</button>
                     </form>
                 </li>
                 <hr>
-                <div id="tasks">
+                <ul id="tasks">
 
-                </div>
+                </ul>
                 <li id="remove" class="clear">
                     <a href="#">Clear all completed</a>
                 </li>

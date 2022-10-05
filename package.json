@@ -1,30 +1,25 @@
 {
-  "name": "webpacksetup",
+  "name": "todo-list",
   "version": "1.0.0",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "build": "webpack --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
     "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OscarFMdev/webpackSetup.git"
+    "url": "git+https://github.com/NurkaAmre/webpack-ex.git"
   },
   "keywords": [],
-  "author": "Nurgul",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OscarFMdev/webpackSetup/issues"
+    "url": "https://github.com/NurkaAmre/webpack-ex/issues"
   },
-  "homepage": "https://github.com/OscarFMdev/webpackSetup#readme",
+  "homepage": "https://github.com/NurkaAmre/webpack-ex#readme",
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.26.0",
     "hint": "^2.0.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
@@ -37,7 +32,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-markdown": "^3.0.0"
-  }
+    "lodash": "^4.17.21"
+  },
+  "main": "webpack.config.js"
 }
