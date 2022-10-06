@@ -28,7 +28,7 @@ function render() {
     listElement.classList.add('list-name');
     btn.classList.add('delete');
     listElement.innerText = list.name;
-    listsContainer.appendChild(listElement,);
+    listsContainer.appendChild(listElement);
   });
 }
 
