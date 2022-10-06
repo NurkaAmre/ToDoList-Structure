@@ -1,3 +1,5 @@
+import './style.css';
+
 const listsContainer = document.querySelector('#tasks');
 const newListForm = document.querySelector('[data-new-list-form]');
 const newListInput = document.querySelector('[data-new-list-input]');
@@ -20,10 +22,13 @@ function render() {
   clearElement(listsContainer);
   lists.forEach((list) => {
     const listElement = document.createElement('li');
+    const btn = document.createElement('button');
     listElement.dataset.listId = list.id;
+    btn.dataset.listId = list.id;
     listElement.classList.add('list-name');
+    btn.classList.add('delete');
     listElement.innerText = list.name;
-    listsContainer.appendChild(listElement);
+    listsContainer.appendChild(listElement,);
   });
 }
 
