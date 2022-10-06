@@ -9,31 +9,29 @@
     <title>ToDoList</title>
 </head>
 <body>
-    <main id="container">
+    <main id="container" class="wrapper">
         <section>
             <ul class="main-ul">
-                <li>
+                <li class="heading">
                     <h1>Today's to do list</h1>
                     <button type="button"><i class="fa-solid fa-arrows-rotate"></i></button>
                 </li>
                 <hr>
                 <li id="new-task">
-                    <form action="" data-new-list-form>
+                    <form action="" class="task-input">
                         <input placeholder="Add a list..." data-new-list-input type="text">
                         <button type="submit" id="push" class="first-btn">&#x21B5;</button>
                     </form>
                 </li>
                 <hr>
-                <ul id="tasks">
-
+                <ul class="task-box">
+               
                 </ul>
-                <li id="remove" class="clear">
+                <li id="remove" class="clear-btn">
                     <a href="#">Clear all completed</a>
                 </li>
             </ul>
         </section>
-        <!-- 
-        <i class="fa-solid fa-trash-can"></i> -->
     </main>
     <script src="./index.js"></script>
 </body>

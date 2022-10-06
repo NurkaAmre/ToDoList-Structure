@@ -1,54 +1,48 @@
 import './style.css';
 
-const listsContainer = document.querySelector('#tasks');
-const newListForm = document.querySelector('[data-new-list-form]');
-const newListInput = document.querySelector('[data-new-list-input]');
+const taskInput = document.querySelector('.task-input input');
+let taskBox = document.querySelector('.task-box');
 
-const lists = [];
+//Get localStorage todo-list 
+let todos = localStorage.getItem('todo-list') ? JSON.parse(localStorage.getItem('todo-list')) : [];
 
-function createList(name) {
-  return {
-    id: Date.now().toString(), name, tasks: [],
-  };
+
+function displayTodo() {
+  console.log(todos)
+  let li = '';
+    todos.forEach((todo, id) => {
+      li += `
+        <li class="task">
+                <label for="${id}">
+                  <input onclick="updateStatus(this)" type="checkbox" id="${id}">
+                  <p>${todo.name}</p>
+                </label>
+                <div class="settings">
+                  <button class="three-dot">&#10247</button>
+                  <button class="task-menu">&#x1F5D1</button>
+                </div>
+          </li>
+          <hr>
+        `;
+    });
+  taskBox.innerHTML = li;
+}
+displayTodo();
+
+function updateStatus(selectedTask) {
+  console.log(selectedTask)
 }
 
-function clearElement(element) {
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
+taskInput.addEventListener('keyup', e => {
+  let userTask = taskInput.value.trim();
+  if(e.key == "Enter" && userTask) {
+    if(!todos) {
+      todos = [];
+    }
+    taskInput.value = '';
+    let taskInfo = {name: userTask};
+    todos.push(taskInfo); // adds new task to todos
+    localStorage.setItem('todo-list', JSON.stringify(todos));
+    displayTodo();
   }
-}
-
-function render() {
-  clearElement(listsContainer);
-  lists.forEach((list) => {
-    const listElement = document.createElement('li');
-    const btn = document.createElement('button');
-    listElement.dataset.listId = list.id;
-    btn.dataset.listId = list.id;
-    listElement.classList.add('list-name');
-    btn.classList.add('delete');
-    listElement.innerText = list.name;
-    listsContainer.appendChild(listElement);
-  });
-}
-
-newListForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const listName = newListInput.value;
-  if (listName == null || listName === '') return;
-  const list = createList(listName);
-  newListInput.value = null;
-  lists.push(list);
-  render();
 });
-
-render();
-
-//         document.querySelector('#tasks').innerHTML += `
-//         <ul class="task">
-//         <li id="taskname">
-//         ${document.querySelector('#newtask input').value}
-//         </li>
-//         <button class='delete'><i class="fa-light fa-ellipsis-vertical"></i></button>
-//         </ul>
-//         `;
