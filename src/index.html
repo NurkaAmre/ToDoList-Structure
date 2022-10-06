@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/6ce384dd4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>ToDoList</title>
+</head>
+<body>
+    <main id="container">
+        <section>
+            <ul class="main-ul">
+                <li>
+                    <h1>Today's to do list</h1>
+                    <button type="button"><i class="fa-solid fa-arrows-rotate"></i></button>
+                </li>
+                <hr>
+                <li id="new-task">
+                    <form action="" data-new-list-form>
+                        <input placeholder="Add a list..." data-new-list-input type="text">
+                        <button type="submit" id="push" class="first-btn">&#x21B5;</button>
+                    </form>
+                </li>
+                <hr>
+                <ul id="tasks">
+
+                </ul>
+                <li id="remove" class="clear">
+                    <a href="#">Clear all completed</a>
+                </li>
+            </ul>
+        </section>
+        <!-- 
+        <i class="fa-solid fa-trash-can"></i> -->
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
