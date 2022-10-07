@@ -1,7 +1,7 @@
 export default function formClear() {
   /* Clear completed tasks */
 
-  const parsedArr = JSON.parse(localStorage.getItem('taskArr'));
-  const temp = parsedArr.filter((item) => item.completed === false);
-  localStorage.setItem('taskArr', JSON.stringify(temp));
+  const todos = JSON.parse(localStorage.getItem('todolist'));
+  const temp = todos.filter((item) => item.completed === false);
+  localStorage.setItem('todolist', JSON.stringify(temp));
 }
