@@ -2,7 +2,7 @@ import Task from './task.js';
 
 /* Store Tasks */
 
-export default function store (task) {
+export default function store(task) {
   const parsedArr = JSON.parse(localStorage.getItem('taskArr')) || [];
   const counter = parsedArr.length + 1;
   const newTask = new Task(counter, task);
