@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://kit.fontawesome.com/6ce384dd4f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css">
-    <title>ToDoList</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bfdabd94cd.js" crossorigin="anonymous"></script>
+    <title>To Do List</title>
 <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+
 <body>
-    <main id="container" class="wrapper">
-        <section>
-            <ul class="main-ul">
-                <li class="heading">
-                    <h1>Today's to do list</h1>
-                    <button type="button"><i class="fa-solid fa-arrows-rotate"></i></button>
-                </li>
-                <hr>
-                <li id="new-task">
-                    <form action="" class="task-input">
-                        <input placeholder="Add a list..." data-new-list-input type="text">
-                        <button type="submit" id="push" class="first-btn">&#x21B5;</button>
-                    </form>
-                </li>
-                <hr>
-                <ul class="task-box">
-               
-                </ul>
-                <li id="remove" class="clear-btn">
-                    <a href="#">Clear all completed</a>
-                </li>
-            </ul>
-        </section>
-    </main>
-    <script src="./index.js"></script>
+    <div class="container">
+        <div class="b-bottom box">
+            <h1 class="">Today's To Do</h1>
+            <button type="button" class="refresh btn" onClick="window.location.reload();">
+                <i id="refresh" class="fa-solid fa-rotate"></i>
+            </button>
+        </div>
+        <form class="form b-bottom box" name="form" method="get">
+            <input type="text" name="task" class="text-field full" placeholder="Add to your list..." required>
+            <button type="submit" class="submit btn first-btn">
+                &#8629
+            </button>
+        </form>
+        <ul class="task-list">
+            <!-- taskList from js -->
+        </ul>
+        <div>
+            <a class="clear-btn" href="">Clear all completed</a>
+        </div>
+    </div>
+    <!-- &#10247 -->
 </body>
+
 </html>
