@@ -2,10 +2,10 @@ export default function displayTodo() {
   const taskList = document.querySelector('.task-list');
 
   /* Display Tasks */
-  let parsedArr = JSON.parse(localStorage.getItem('taskArr')) || [];
+  let todos = JSON.parse(localStorage.getItem('todolist')) || [];
 
   taskList.innerHTML = '';
-  parsedArr.map((task) => {
+  todos.map((task) => {
     const taskItem = document.createElement('li');
     let box;
     let styling;
@@ -49,7 +49,7 @@ export default function displayTodo() {
         new FormData(e.target),
       );
       task.description = input.description;
-      localStorage.setItem('taskArr', JSON.stringify(parsedArr));
+      localStorage.setItem('todolist', JSON.stringify(todos));
       updateBtn.style.display = 'none';
       deleteBtn.style.display = 'block';
       updateText.style.backgroundColor = '#fff';
@@ -58,14 +58,14 @@ export default function displayTodo() {
     /* Delete task */
     deleteBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      let temp = parsedArr.filter((item) => item !== task);
-      parsedArr = temp;
-      temp = parsedArr.map((item) => {
-        item.index = parsedArr.indexOf(item) + 1;
+      let temp = todos.filter((item) => item !== task);
+      todos = temp;
+      temp = todos.map((item) => {
+        item.index = todos.indexOf(item) + 1;
         return item;
       });
-      parsedArr = temp;
-      localStorage.setItem('taskArr', JSON.stringify(parsedArr));
+      todos = temp;
+      localStorage.setItem('todolist', JSON.stringify(todos));
       taskList.removeChild(taskItem);
     });
 
@@ -73,7 +73,7 @@ export default function displayTodo() {
     const checkbox = taskItem.querySelector('.checkbox');
     checkbox.addEventListener('change', () => {
       task.completed = checkbox.checked;
-      localStorage.setItem('taskArr', JSON.stringify(parsedArr));
+      localStorage.setItem('todolist', JSON.stringify(todos));
 
       if (task.completed) {
         updateText.style.textDecoration = 'line-through';
