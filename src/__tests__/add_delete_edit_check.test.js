@@ -1,5 +1,5 @@
 /**
- * @jest-environment jsdom
+  @jest-environment jsdom
  */
 import store from '../modules/store.js';
 import displayTodo from '../modules/function.js';
