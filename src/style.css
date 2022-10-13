@@ -90,8 +90,6 @@ input::placeholder {
   bottom: 68%;
   background: none;
   border: none;
-
-  /* padding-inline: 10px; */
   font-size: 30px;
   cursor: pointer;
 }
