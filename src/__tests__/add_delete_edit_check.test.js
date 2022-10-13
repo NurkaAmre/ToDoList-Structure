@@ -1,10 +1,9 @@
-
 /**
  * @jest-environment jsdom
  */
-import store from '../modules/store';
-import displayTodo from '../modules/function';
-import formClear from '../modules/cleartask';
+import store from '../modules/store.js';
+import displayTodo from '../modules/function.js';
+import formClear from '../modules/cleartask.js';
 
 document.body.innerHTML = '<input type="text" name="task" class="text-field full" placeholder="Add to your list..." required> <ul class="task-list"> </ul> <a class="clear-btn" href="">Clear all completed</a>';
 
