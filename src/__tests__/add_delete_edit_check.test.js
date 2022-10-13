@@ -1,3 +1,7 @@
+
+/**
+ * @jest-environment jsdom
+ */
 import store from '../modules/store';
 import displayTodo from '../modules/function';
 import formClear from '../modules/cleartask';
